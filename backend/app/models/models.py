@@ -11,6 +11,7 @@ Base = declarative_base()
 
 class tables:
     USER = "user"
+    NOTES = "notes"
 
 
 def CreateUUID():
@@ -31,7 +32,12 @@ class users(Base):
     name = Column(String, nullable=False)
     email = Column(String, nullable=False)
 
+class notes(Base):
+    __tablename__ = tables.NOTES
+    note_id = Column(String, Primary_key=False)
+
 
 class schemas:
     USERS = users
+    NOTES = notes
 
